@@ -1,10 +1,19 @@
 package com.train;
 
 public class Tickets {
-    int total;
-    int roundTickets;
-    public Tickets(int total, int roundTickets){
+    int total = 0;
+    int roundTickets = 0;
+//    public Tickets(int total, int roundTickets){
+//        this.total = total;
+//        this.roundTickets = roundTickets;
+//    }
+
+
+    public void setTotal(int total) {
         this.total = total;
+    }
+
+    public void setRoundTickets(int roundTickets) {
         this.roundTickets = roundTickets;
     }
 
