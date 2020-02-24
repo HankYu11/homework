@@ -7,7 +7,7 @@ public class Tester {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Tickets tickets = new Tickets();
-        //請問老師使用while(true)是否不好
+
         while (true){
             System.out.print("請輸入欲購買張數：");
             tickets.setTotal(scanner.nextInt());
