@@ -13,6 +13,12 @@ fun main(args: Array<String>) {
     print("高：")
     height = readLine()!!.toFloat()
 
+    //下面的if有提示說用when寫，所以試著寫了，但不太理解這樣使用是否得宜
+    when(box3.validate(length,width,height)){
+        true -> println("Box3")
+        false -> if(box5.validate(length,width,height)) println("Box5") else println("Too Big!")
+    }
+
     if(box3.validate(length,width,height)){
         println("Box3")
     }else if(box5.validate(length,width,height)){
@@ -22,20 +28,13 @@ fun main(args: Array<String>) {
     }
 }
 
-class Box3{
-    val length = 23f
-    val width = 14f
-    val height = 13f
-
-    fun validate(length: Float,width:Float,height:Float) : Boolean{
-        return(length <= this.length && width <= this.width && height <= this.height)
-    }
+class Box3 : Box(23f,14f,13f){
 }
 
-class Box5{
-    val length = 39.5f
-    val width = 27.5f
-    val height = 23f
+class Box5 : Box(39.5f,27.5f,23f){
+}
+
+open class Box(val length: Float,val width: Float,val height: Float){
 
     fun validate(length: Float,width:Float,height:Float) : Boolean{
         return(length <= this.length && width <= this.width && height <= this.height)
